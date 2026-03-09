@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Apply Leave</h2>
+
+<form method="POST">
+<input class="form-control mb-2" name="days" placeholder="Leave Days">
+<input class="form-control mb-2" name="reason" placeholder="Reason">
+<button class="btn btn-warning">Submit</button>
+</form>
+
+{% endblock %}

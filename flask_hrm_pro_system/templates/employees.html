@@ -1,0 +1,32 @@
+
+<h2>Employees</h2>
+
+<a href="/add_employee">Add Employee</a><br><br>
+
+<table border=1 cellpadding=10>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Salary</th>
+<th>Attendance</th>
+<th>Leave</th>
+<th>Salary Calc</th>
+</tr>
+
+{% for e in emps %}
+<tr>
+<td>{{e.id}}</td>
+<td>{{e.name}}</td>
+<td>{{e.department}}</td>
+<td>{{e.salary}}</td>
+
+<td><a href="/attendance/{{e.id}}">Mark</a></td>
+<td><a href="/leave/{{e.id}}">Apply</a></td>
+<td><a href="/salary/{{e.id}}">View</a></td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/dashboard">Back</a>

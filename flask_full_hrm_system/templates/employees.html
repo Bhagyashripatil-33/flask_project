@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Employees</h2>
+
+<a class="btn btn-success mb-3" href="/add_employee">Add Employee</a>
+
+<table class="table table-bordered">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Department</th>
+<th>Salary</th>
+<th>Attendance</th>
+<th>Leave</th>
+<th>Salary</th>
+</tr>
+
+{% for e in emps %}
+<tr>
+<td>{{e.id}}</td>
+<td>{{e.name}}</td>
+<td>{{e.email}}</td>
+<td>{{e.department}}</td>
+<td>{{e.salary}}</td>
+
+<td><a class="btn btn-primary btn-sm" href="/attendance/{{e.id}}">Mark</a></td>
+<td><a class="btn btn-warning btn-sm" href="/leave/{{e.id}}">Apply</a></td>
+<td><a class="btn btn-info btn-sm" href="/salary/{{e.id}}">View</a></td>
+
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
