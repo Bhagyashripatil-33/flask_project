@@ -1,0 +1,14 @@
+
+<h2>Admin Dashboard</h2>
+
+<h3>Employees</h3>
+{% for u in users %}
+<p>{{u.username}} - {{u.role}}</p>
+{% endfor %}
+
+<h3>Leave Requests</h3>
+{% for l in leaves %}
+<p>{{l.reason}} - {{l.status}} 
+<a href="/approve/{{l.id}}">Approve</a>
+</p>
+{% endfor %}
